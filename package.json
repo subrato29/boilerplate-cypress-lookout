@@ -1,0 +1,25 @@
+{
+  "name": "boilerplate-cypress",
+  "version": "1.0.0",
+  "description": "This is a frontend testing framework",
+  "main": "index.js",
+  "scripts": {
+    "delete": "rm -rf reports && rm -rf mochawesome-report",
+    "test": "npm run delete && cypress open",
+    "e2e": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js",
+    "chrome": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser chrome",
+    "firefox": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser firefox",
+    "merge": "mochawesome-merge reports/*.json > reports/e2eReport.json",
+    "generateMochawesomeReport": "marge reports/e2eReport.json --reports ./ --inline",
+    "all": "npm run delete && npm run e2e && npm run merge && npm run generateMochawesomeReport"
+  },
+  "author": "Subrato Sarkar",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.7.0",
+    "cypress-file-upload": "^5.0.8",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

@@ -1,0 +1,5 @@
+{
+    "login": "https://app.lesstage0.flexilis.org/",
+    "devices": "https://app.lesstage0.flexilis.org/devices/groups",
+    "customPolicies": "https://app.lesstage0.flexilis.org/apps/policies"
+}
