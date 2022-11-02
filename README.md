@@ -43,7 +43,6 @@ Cypress can test anything that runs in a browser.
 Framework built on
 ------------------------------
 ```
-
 cypress (coupled with mocha and chai)
 
 node.js
