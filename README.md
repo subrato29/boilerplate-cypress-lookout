@@ -12,7 +12,7 @@ What Cypress is
 ```
 Cypress is a next generation front end testing tool built for the modern web.
 
-One man army. Cypress provides mocha and chai inside their library. You don't need to import external libraries much to write a test case. But if you want something specific, you can.
+One man army. Cypress provides mocha(unit testing framework) and chai(assertion library) inside their library. You don't need to import external libraries much to write a test case. But if you want something specific, you can.
 
 ```
 
