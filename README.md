@@ -1,16 +1,46 @@
 Author: Subrato Sarkar
 ------------------------------
-
 ```
 This is an e2e frontend testing framework
 
-boilerplate-cypress
+boilerplate-cypress-lookout
 
 ````
 
+What Cypress is
+---------------------------------
+```
+Cypress is a next generation front end testing tool built for the modern web.
+
+One man army. Cypress provides mocha and chai inside their library. You don't need to import external libraries much to write a test case. But if you want something specific, you can.
+
+```
+
+Why Cypress
+--------------------------------
+```
+Cypress is most often compared to Selenium; however Cypress is both fundamentally and architecturally different. Cypress is not constrained by the same restrictions as Selenium.
+
+This enables you to write faster, easier and more reliable tests.
+
+```
+
+Who uses Cypress?
+---------------------------------
+```
+Cypress users are typically developers or QA engineers building web applications using modern JavaScript frameworks.
+
+Cypress enables you to write all types of tests:
+
+End-to-end tests
+Integration tests
+Unit tests
+Cypress can test anything that runs in a browser.
+
+```
+
 Framework built on
 ------------------------------
-
 ```
 
 cypress (coupled with mocha and chai)
@@ -21,7 +51,6 @@ node.js
 
 Getting started:
 ------------------------------
-
 ```
 Make sure node is installed.
 
