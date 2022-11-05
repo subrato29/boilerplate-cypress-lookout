@@ -8,12 +8,12 @@
 
     "reporter": "mochawesome",
     "reporterOptions": {
-      "reportDir": "reports",
+      "reportDir": "./cypress/reports",
       "reportFilename": "report",
       "overwrite": false,
       "html": true,
       "json": true,
       "charts": true
     },
-    "video": false
+    "video": true
 }
