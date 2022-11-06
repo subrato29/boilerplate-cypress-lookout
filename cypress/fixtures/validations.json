@@ -2,5 +2,7 @@
     "invalidLoginMessage": "Invalid username or password",
     "validLoginMessage": "Mobile Endpoint Security Dashboard",
     "confirmationOfDeviceGroupCreated": "The device group was created.",
-    "tabCustomPolicies": "Custom Policies"
+    "tabCustomPolicies": "Custom Policies",
+    "tabEnrollDevices": "Enroll devices",
+    "btnAddEmails": "Add emails"
 }
