@@ -13,7 +13,7 @@ describe ('Login functionality of MES console', () => {
         cy.fixture ('credentials').then ((credential) => {
             e2eUtils.globalThis.credential = credential;
         })
-        cy.fixture ('validations').then ((validation) => {
+        cy.fixture ('validationTexts').then ((validation) => {
             e2eUtils.globalThis.validation = validation;
         })
     })
