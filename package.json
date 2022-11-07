@@ -6,7 +6,7 @@
   "scripts": {
     "delete": "rm -rf ./cypress/reports && rm -rf ./cypress/videos && rm -rf mochawesome-report && rm -rf ./cypress/screenshots && rm -rf e2eReport.html",
     "test": "npm run delete && cypress open",
-    "e2e": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js",
+    "e2e": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/web_e2e/*.js && ./node_modules/.bin/cypress run --spec cypress/integration/api_e2e/*.js",
     "chrome": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser chrome",
     "firefox": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser firefox",
     "merge": "mochawesome-merge ./cypress/reports/*.json > ./cypress/reports/e2eReport.json",

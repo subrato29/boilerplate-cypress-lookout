@@ -3,8 +3,8 @@
 /// <reference types="Cypress" />
 /// <reference types="chai" />
 
-import devicesPage from '../../../cypress/support/pageobjects/devicesPage'
-import loginPage from '../../../cypress/support/pageobjects/loginPage'
+import devicesPage from '../../support/pageobjects/devicesPage'
+import loginPage from '../../support/pageobjects/loginPage'
 import e2eUtils from '../../support/utils/e2eUtils'
 
 describe ('Validation of Devices page', () => {

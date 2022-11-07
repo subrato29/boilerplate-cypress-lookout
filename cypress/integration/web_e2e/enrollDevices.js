@@ -3,10 +3,11 @@
 /// <reference types="Cypress" />
 /// <reference types="chai" />
 
-import loginPage from '../../../cypress/support/pageobjects/loginPage'
+import loginPage from '../../support/pageobjects/loginPage'
+import enrollDevicesPage from '../../support/pageobjects/enrollDevicesPage'
 import e2eUtils from '../../support/utils/e2eUtils'
 
-describe ('Login functionality of MES console', () => {
+describe ('Test enroll devices', () => {
 
     beforeEach (() => {
         loginPage.navigate ();
@@ -18,19 +19,20 @@ describe ('Login functionality of MES console', () => {
         })
     })
 
-    it ('Invalid login test', () => {
-        loginPage.username.type ('invalid@gmail.com');
-        loginPage.submit.click();
-        loginPage.password.type ('password');
-        loginPage.submit.click();
-        loginPage.invalidLoginMessage.should('have.text', e2eUtils.globalThis.validation.invalidLoginMessage);
-    })
-
-    it ('Successful login test', () => {
+    it ('Enroll devices test', () => {
         loginPage.username.type (e2eUtils.globalThis.credential.username);
         loginPage.submit.click();
         loginPage.password.type (e2eUtils.globalThis.credential.password);
         loginPage.submit.click();
         loginPage.validLogin.should('have.text', e2eUtils.globalThis.validation.validLoginMessage);
+        enrollDevicesPage.btnEnrollDevices.click();
+        enrollDevicesPage.tabEnrollDevices.should ('have.text', e2eUtils.globalThis.validation.tabEnrollDevices);
+        enrollDevicesPage.btnEnrollWithEmail.click();
+        enrollDevicesPage.btnAddEmail.should ('have.text', e2eUtils.globalThis.validation.btnAddEmails);
+        const email = e2eUtils.generateRandomString (6) + '@email.com';
+        enrollDevicesPage.enterEmail.type (email);
+        enrollDevicesPage.btnAddEmail.click ();
+        enrollDevicesPage.emailAdded.should ('have.text', email);
     })
+
 })

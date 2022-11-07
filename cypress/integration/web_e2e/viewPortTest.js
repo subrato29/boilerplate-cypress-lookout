@@ -3,7 +3,7 @@
 /// <reference types="Cypress" />
 /// <reference types="chai" />
 
-import loginPage from '../../../cypress/support/pageobjects/loginPage'
+import loginPage from '../../support/pageobjects/loginPage'
 
 describe ('Testing MES console login page in different view ports', () => {
 
