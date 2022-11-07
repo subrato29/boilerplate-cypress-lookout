@@ -56,10 +56,10 @@ describe ('POST user test', () => {
             }).then ((res) => {
                 //GET created user details
                 expect (res.status).to.eq(200);
-                expect(res.body).has.property('id', userId);
-                expect(res.body).has.property('name', name);
-                expect(res.body).has.property('status', status);
-                expect(res.body).has.property('email', email);
+                expect (res.body).has.property('id', userId);
+                expect (res.body).has.property('name', name);
+                expect (res.body).has.property('status', status);
+                expect (res.body).has.property('email', email);
             })
         })
     })

@@ -1,7 +1,7 @@
 Author: Subrato Sarkar
 ------------------------------
 ```
-This is an e2e frontend testing framework
+This is an e2e functional testing framework for Web and API
 
 boilerplate-cypress-lookout
 
@@ -49,6 +49,23 @@ node.js
 
 ```
 
+Framework feature:
+---------------------------------
+```
+Test automation for Web and API can be performed in a SINGLE code-base
+Reusable & Robust
+PageObject model introduced for Web
+User friendly HTML report
+Fast performing
+Video recording and screenshot feature
+Execution in physical browser and headless
+Easy debugging
+Easy to write test case
+Well organized and easy maintenance
+No need to declare implicit or explicit wait for synchronization at test case level 
+
+```
+
 Getting started:
 ------------------------------
 ```
@@ -56,7 +73,7 @@ Make sure node is installed.
 
 git clone 'repo-url'
 
-cd boilerplate-cypress
+cd boilerplate-cypress-lookout
 
 npm install
 
