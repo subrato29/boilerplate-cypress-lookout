@@ -54,7 +54,7 @@ Framework feature:
 ```
 Test automation for Web and API can be performed in a SINGLE code-base
 PageObject model introduced for Web
-Reusable & Robust to automate any web and api platform
+Reusable & Robust to automate any Web and API platform
 User friendly HTML report after test execution done
 Mocha(unit testing) and chai (assertion library) provided by Cypress itself. No need to import externally.
 Fast performing
@@ -63,7 +63,8 @@ Execution in physical browser and headless
 Easy debugging
 Easy to write test case
 Well organized and easy maintenance
-No need to declare implicit or explicit wait for synchronization at test case level 
+No need to declare implicit or explicit wait for synchronization at test case level for Web testing
+User can run Web and API test scenarios on a single run instance, or separate instances, as per requirement.
 
 ```
 
