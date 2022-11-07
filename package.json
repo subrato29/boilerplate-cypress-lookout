@@ -1,16 +1,20 @@
 {
-  "name": "boilerplate-cypress",
+  "name": "boilerplate-cypress-lookout",
   "version": "1.0.0",
   "description": "This is a frontend testing framework",
   "main": "index.js",
   "scripts": {
     "delete": "rm -rf ./cypress/reports && rm -rf ./cypress/videos && rm -rf mochawesome-report && rm -rf ./cypress/screenshots && rm -rf e2eReport.html",
     "test": "npm run delete && cypress open",
+    "webTest": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/web_e2e/*.js",
+    "apiTest": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/api_e2e/*.js",
     "e2e": "npm run delete && ./node_modules/.bin/cypress run --spec cypress/integration/web_e2e/*.js && ./node_modules/.bin/cypress run --spec cypress/integration/api_e2e/*.js",
     "chrome": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser chrome",
     "firefox": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser firefox",
     "merge": "mochawesome-merge ./cypress/reports/*.json > ./cypress/reports/e2eReport.json",
     "generateMochawesomeReport": "marge ./cypress/reports/e2eReport.json --reportDir ./ --inline",
+    "web": "npm run delete && npm run webTest && npm run merge && npm run generateMochawesomeReport",
+    "api": "npm run delete && npm run apiTest && npm run merge && npm run generateMochawesomeReport",
     "all": "npm run delete && npm run e2e && npm run merge && npm run generateMochawesomeReport"
   },
   "author": "Subrato Sarkar",
