@@ -1,3 +1,4 @@
 {
-    "users": "https://gorest.co.in/public/v2/users/"
+    "users": "https://gorest.co.in/public/v2/users/",
+    "interceptWebtUrl": "https://jsonplaceholder.typicode.com/"
 }
