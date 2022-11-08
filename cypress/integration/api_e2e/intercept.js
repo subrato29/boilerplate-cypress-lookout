@@ -26,7 +26,7 @@ describe ('Testing api intercept', () => {
 
     it ('Mocking with intercept test with static response', () => {
         cy.visit (e2eUtils.globalThis.endpoint.interceptWebtUrl);
-        cy.intercept ('GET', '/posts', {totalPost : 5, name: 'Subrato'}).as ('post');
+        cy.intercept ('GET', e2eUtils.globalThis.endpoint.post, {totalPost : 5, name: 'Subrato'}).as ('post');
         cy.get ('table:nth-of-type(1) a[href *= \'posts\']').click ();
         cy.wait ('@post');
     })
@@ -43,7 +43,7 @@ describe ('Testing api intercept', () => {
             "status": status
         }
         cy.visit (e2eUtils.globalThis.endpoint.interceptWebtUrl);
-        cy.intercept ('GET', '/posts', responseBodyMocked).as ('post');
+        cy.intercept ('GET', e2eUtils.globalThis.endpoint.post, responseBodyMocked).as ('post');
         cy.get ('table:nth-of-type(1) a[href *= \'posts\']').click ();
         cy.wait ('@post');
     })
