@@ -19,7 +19,7 @@ describe ('Validation of Devices page', () => {
         })
     })
 
-    it ('Validation of creating group', () => {
+    it.skip ('Validation of creating group', () => {
         loginPage.username.type (e2eUtils.globalThis.credential.username);
         loginPage.submit.click();
         loginPage.password.type (e2eUtils.globalThis.credential.password);
