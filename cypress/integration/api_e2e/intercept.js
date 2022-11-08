@@ -31,19 +31,19 @@ describe ('Testing api intercept', () => {
         cy.wait ('@post');
     })
 
-    it.only ('Mocking with intercept test with dynamic response', () => {
+    it ('Mocking with intercept test with dynamic response', () => {
         const email = e2eUtils.generateRandomString(6) + '@email.com';
         const name = 'Cypress_Test_' + e2eUtils.generateAlphaNumericNo(6);
         const gender = 'male';
         const status = 'active';
-        const responseBody = {
+        const responseBodyMocked = {
             "name": name,
             "gender": gender,
             "email": email,
             "status": status
         }
         cy.visit (e2eUtils.globalThis.endpoint.interceptWebtUrl);
-        cy.intercept ('GET', '/posts', responseBody).as ('post');
+        cy.intercept ('GET', '/posts', responseBodyMocked).as ('post');
         cy.get ('table:nth-of-type(1) a[href *= \'posts\']').click ();
         cy.wait ('@post');
     })
