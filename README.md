@@ -78,7 +78,7 @@ No need to declare implicit or explicit wait for synchronization at test case le
 
 User can run Web and API test scenarios on a single run instance, or separate instances, as per requirement
 
-API intercept feature invoked
+API intercept feature, which a super useful tool, especially for testing hard-to-reach places of your app.
 
 ```
 
