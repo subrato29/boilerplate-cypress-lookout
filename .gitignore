@@ -74,3 +74,4 @@ videos
 reports
 output.html
 e2eReport.html
+*.cypress.env.json

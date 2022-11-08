@@ -7,14 +7,17 @@ const e2eUtils = require("../../support/utils/e2eUtils");
 
 describe ('POST user test', () => {
 
+    let BEARER_TOKEN = '';
+
     const email = e2eUtils.generateRandomString(6) + '@email.com';
     const name = 'Cypress_Test_' + e2eUtils.generateAlphaNumericNo(6);
     const gender = 'male';
     const status = 'active';
 
     before (() => {
-        cy.fixture ('tokenLib').then ((token) => {
+        cy.fixture ('cypress.env').then ((token) => {
             e2eUtils.globalThis.token = token;
+            BEARER_TOKEN = e2eUtils.globalThis.token.BEARER_TOKEN;
         })
     })
 
@@ -30,7 +33,7 @@ describe ('POST user test', () => {
             method : 'POST',
             url : e2eUtils.globalThis.endpoint.users,
             headers : {
-                'Authorization' : e2eUtils.globalThis.token.BEARER_TOKEN
+                'Authorization' : BEARER_TOKEN
             },
             body : {
                 "name" :  name,
@@ -51,7 +54,7 @@ describe ('POST user test', () => {
                 method: 'GET',
                 url: e2eUtils.globalThis.endpoint.users + userId,
                 headers: {
-                    'authorization': e2eUtils.globalThis.token.BEARER_TOKEN
+                    'authorization': BEARER_TOKEN
                 }
             }).then ((res) => {
                 //GET created user details

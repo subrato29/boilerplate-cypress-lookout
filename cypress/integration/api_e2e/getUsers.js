@@ -7,9 +7,12 @@ const e2eUtils = require("../../support/utils/e2eUtils");
 
 describe ('GET users test', () => {
 
+    let BEARER_TOKEN = '';
+
     before (() => {
-        cy.fixture ('tokenLib').then ((token) => {
+        cy.fixture ('cypress.env').then ((token) => {
             e2eUtils.globalThis.token = token;
+            BEARER_TOKEN = e2eUtils.globalThis.token.BEARER_TOKEN;
         })
     })
 
@@ -24,11 +27,10 @@ describe ('GET users test', () => {
             method: 'GET',
             url: e2eUtils.globalThis.endpoint.users,
             headers: {
-                'authorization': e2eUtils.globalThis.token.BEARER_TOKEN
+                'authorization': BEARER_TOKEN
             }
         }).then ((res) => {
             expect (res.status).to.eq(200);
-            console.log (res.body)
         })
     })
 
