@@ -76,7 +76,9 @@ Well organized and easy maintenance
 
 No need to declare implicit or explicit wait for synchronization at test case level for Web testing
 
-User can run Web and API test scenarios on a single run instance, or separate instances, as per requirement.
+User can run Web and API test scenarios on a single run instance, or separate instances, as per requirement
+
+API intercept feature invoked
 
 ```
 
