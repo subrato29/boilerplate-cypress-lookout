@@ -14,6 +14,13 @@ describe ('POST user test', () => {
     const gender = 'male';
     const status = 'active';
 
+    let userId = '';
+    const UPDATED = '_UPDATED';
+
+    const RESPONSE_CODE_200 = 200;
+    const RESPONSE_CODE_204 = 204;
+    const RESPONSE_CODE_201 = 201;
+
     before (() => {
         cy.fixture ('cypress.env').then ((token) => {
             e2eUtils.globalThis.token = token;
@@ -27,8 +34,7 @@ describe ('POST user test', () => {
         })
     })
 
-    it('Create user test', () => {
-        //1. POST user
+    it('Testing CRUD operation', () => {
         cy.request({
             method : 'POST',
             url : e2eUtils.globalThis.endpoint.users,
@@ -42,14 +48,13 @@ describe ('POST user test', () => {
                 "status" : status
             }
         }).then((res) => {
-            //cy.log(JSON.stringify(res));
-            expect(res.status).to.eq(201);
+            expect(res.status).to.eq(RESPONSE_CODE_201);
             expect(res.body).has.property('name', name);
             expect(res.body).has.property('email', email);
             expect(res.body).has.property('gender', gender);
             expect(res.body).has.property('status', status);
         }).then ((res) => {
-            const userId = res.body.id;
+            userId = res.body.id;
             cy.request({
                 method: 'GET',
                 url: e2eUtils.globalThis.endpoint.users + userId,
@@ -57,12 +62,38 @@ describe ('POST user test', () => {
                     'authorization': BEARER_TOKEN
                 }
             }).then ((res) => {
-                //GET created user details
-                expect (res.status).to.eq(200);
+                expect (res.status).to.eq(RESPONSE_CODE_200);
                 expect (res.body).has.property('id', userId);
                 expect (res.body).has.property('name', name);
                 expect (res.body).has.property('status', status);
                 expect (res.body).has.property('email', email);
+            }).then ((res) => {
+                cy.request({
+                    method : 'PUT',
+                    url : e2eUtils.globalThis.endpoint.users + userId,
+                    headers : {
+                        'Authorization' : BEARER_TOKEN
+                    },
+                    body : {
+                        "name" :  name + UPDATED,
+                        "gender" : gender,
+                        "email" : email,
+                        "status" : status
+                    }
+                }).then ((res) => {
+                    expect (res.status).to.eq (RESPONSE_CODE_200);
+                    expect (res.body).has.property ('name', name + UPDATED);
+                }).then (() => {
+                    cy.request ({
+                        method : 'DELETE',
+                        url : e2eUtils.globalThis.endpoint.users + userId,
+                        headers : {
+                            'Authorization' : BEARER_TOKEN
+                        }
+                    }).then (res => {
+                        expect(res.status).to.eq (RESPONSE_CODE_204);
+                    })
+                })
             })
         })
     })
