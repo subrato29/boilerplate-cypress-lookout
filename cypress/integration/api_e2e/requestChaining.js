@@ -8,8 +8,9 @@ import httpUtils from '../apiUtils/httpUtils';
 
 describe ('Request chaining', () => {
 
-    const email = e2eUtils.generateRandomString(6) + '@email.com';
-    const name = 'Cypress_Test_' + e2eUtils.generateAlphaNumericNo(6);
+    const RANDOM_KEY = e2eUtils.generateAlphaNumericNo(6);
+    const email = RANDOM_KEY + '@email.com';
+    const name = 'Cypress_Test_' + RANDOM_KEY;
     const gender = 'male';
     const status = 'active';
     
