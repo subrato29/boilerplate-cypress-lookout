@@ -99,9 +99,10 @@ Running the tests:
 -------------------
 ```
 'npx cypress open' OR 
-'npm run test' (normal inside the physical browser) OR
-'npm run chrome' (all tests will be executed headless mode in chrome with physical browser) OR
-'npm run all' (running all tests and generated mochawesome html report)
+'npm run test' (normal run with a physical browser) OR
+'npm run web' (all webUI tests will run in headless mode)
+'npm run api' (all API tests will run in headless mode)
+'npm run all' (all WebUI + API tests will run)
 
 ```
 
