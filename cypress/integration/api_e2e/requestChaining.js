@@ -5,7 +5,7 @@ const e2eUtils = require("../../support/utils/e2eUtils");
 /// <reference types="Cypress" />
 /// <reference types="chai" />
 
-describe ('POST user test', () => {
+describe ('Request chaining', () => {
 
     let BEARER_TOKEN = '';
 
