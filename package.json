@@ -13,9 +13,10 @@
     "firefox": "./node_modules/.bin/cypress run --spec cypress/integration/e2e/*.js --browser firefox",
     "merge": "mochawesome-merge ./cypress/reports/*.json > ./cypress/reports/e2eReport.json",
     "generateMochawesomeReport": "marge ./cypress/reports/e2eReport.json --reportDir ./ --inline",
-    "web": "npm run delete && npm run webTest && npm run merge && npm run generateMochawesomeReport",
-    "api": "npm run delete && npm run apiTest && npm run merge && npm run generateMochawesomeReport",
-    "all": "npm run delete && npm run e2e && npm run merge && npm run generateMochawesomeReport"
+    "generateFinalReport": "npm run merge && npm run generateMochawesomeReport",
+    "web": "npm run delete && npm run webTest || npm run generateFinalReport && npm run generateFinalReport",
+    "api": "npm run delete && npm run apiTest || npm run generateFinalReport && npm run generateFinalReport",
+    "all": "npm run delete && npm run e2e || npm run generateFinalReport && npm run generateFinalReport"
   },
   "author": "Subrato Sarkar",
   "license": "ISC",
