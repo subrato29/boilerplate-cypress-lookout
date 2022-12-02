@@ -75,3 +75,5 @@ reports
 output.html
 e2eReport.html
 *.cypress.env.json
+.~token.json.*
+.~credentials.json.*

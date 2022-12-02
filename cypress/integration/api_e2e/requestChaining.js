@@ -1,7 +1,7 @@
 'use strict'
 
 const e2eUtils = require("../../support/utils/e2eUtils");
-import httpUtils from '../apiUtils/httpUtils';
+import httpUtils from '../../support/apiUtils/httpUtils';
 
 /// <reference types="Cypress" />
 /// <reference types="chai" />
