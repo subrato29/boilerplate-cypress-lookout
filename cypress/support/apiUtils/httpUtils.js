@@ -6,6 +6,12 @@
 import authToken from '../../fixtures/token.json';
 
 var httpUtils = {
+    
+    /**
+     * 
+     * @param {*} endpoint 
+     * @returns 
+     */
     get: (endpoint) => {
         return cy.request ({
             method: 'GET',
@@ -13,6 +19,13 @@ var httpUtils = {
             headers: authToken
         })
     },
+
+    /**
+     * 
+     * @param {*} endpoint 
+     * @param {*} requestBody 
+     * @returns 
+     */
     post: (endpoint, requestBody) => {
         return cy.request({
             method : 'POST',
@@ -21,6 +34,13 @@ var httpUtils = {
             body : requestBody
         })
     },
+
+    /**
+     * 
+     * @param {*} endpoint 
+     * @param {*} requestBody 
+     * @returns 
+     */
     put: (endpoint, requestBody) => {
         return cy.request({
             method : 'PUT',
@@ -29,6 +49,12 @@ var httpUtils = {
             body : requestBody
         })
     },
+
+    /**
+     * 
+     * @param {*} endpoint 
+     * @returns 
+     */
     delete: (endpoint) => {
         return cy.request ({
             method: 'DELETE',
