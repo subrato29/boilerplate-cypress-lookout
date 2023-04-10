@@ -16,7 +16,8 @@
     "generateFinalReport": "npm run merge && npm run generateMochawesomeReport",
     "web": "npm run delete && npm run webTest || npm run generateFinalReport && npm run generateFinalReport",
     "api": "npm run delete && npm run apiTest || npm run generateFinalReport && npm run generateFinalReport",
-    "all": "npm run delete && npm run e2e || npm run generateFinalReport && npm run generateFinalReport"
+    "all": "npm run delete && npm run e2e || npm run generateFinalReport && npm run generateFinalReport",
+    "pretty": "prettier --write \"**/*.js\""
   },
   "author": "Subrato Sarkar",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "cypress-file-upload": "^5.0.8",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.1",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "prettier": "2.8.7"
   }
 }

@@ -1,13 +1,13 @@
 'use strict'
 
-import e2eUtils from "./e2eUtils";
+import e2eUtils from './e2eUtils'
 
 var fixtureUtils = {
-    getFixture: (value) => {
-        cy.fixture (value).then ((input) => {
-            return e2eUtils.globalThis.input;
-        })
-    }
+  getFixture: (value) => {
+    cy.fixture(value).then((input) => {
+      return e2eUtils.globalThis.input
+    })
+  },
 }
 
-module.exports = fixtureUtils;
+module.exports = fixtureUtils

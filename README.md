@@ -130,3 +130,10 @@ cypress.json
     e.g. timeout etc.
 
 ```
+
+Running the code formatter:
+---------------------------
+```
+npm run pretty
+
+```
