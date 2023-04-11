@@ -24,7 +24,7 @@ describe('Login functionality of MES console', () => {
     loginPage.submit.click()
     loginPage.invalidLoginMessage.should(
       'have.text',
-      e2eUtils.globalThis.validation.invalidLoginMessage,
+      e2eUtils.globalThis.validation.invalidLoginMessage
     )
   })
 
@@ -35,7 +35,7 @@ describe('Login functionality of MES console', () => {
     loginPage.submit.click()
     loginPage.validLogin.should(
       'have.text',
-      e2eUtils.globalThis.validation.validLoginMessage,
+      e2eUtils.globalThis.validation.validLoginMessage
     )
   })
 })

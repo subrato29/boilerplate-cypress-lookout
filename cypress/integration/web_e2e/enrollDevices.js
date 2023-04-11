@@ -25,17 +25,17 @@ describe('Test enroll devices', () => {
     loginPage.submit.click()
     loginPage.validLogin.should(
       'have.text',
-      e2eUtils.globalThis.validation.validLoginMessage,
+      e2eUtils.globalThis.validation.validLoginMessage
     )
     enrollDevicesPage.btnEnrollDevices.click()
     enrollDevicesPage.tabEnrollDevices.should(
       'have.text',
-      e2eUtils.globalThis.validation.tabEnrollDevices,
+      e2eUtils.globalThis.validation.tabEnrollDevices
     )
     enrollDevicesPage.btnEnrollWithEmail.click()
     enrollDevicesPage.btnAddEmail.should(
       'have.text',
-      e2eUtils.globalThis.validation.btnAddEmails,
+      e2eUtils.globalThis.validation.btnAddEmails
     )
     const email = e2eUtils.generateRandomString(6) + '@email.com'
     enrollDevicesPage.enterEmail.type(email)

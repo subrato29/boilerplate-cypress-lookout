@@ -48,7 +48,7 @@ describe('Testing api intercept', () => {
     cy.intercept(
       'GET',
       e2eUtils.globalThis.endpoint.post,
-      responseBodyMocked,
+      responseBodyMocked
     ).as('post')
     cy.get("table:nth-of-type(1) a[href *= 'posts']").click()
     cy.wait('@post')

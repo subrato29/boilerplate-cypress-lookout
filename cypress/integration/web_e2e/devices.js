@@ -30,7 +30,7 @@ describe('Validation of Devices page', () => {
     devicesPage.confirmBtn.click()
     devicesPage.confirmationMessageOfGroupCreated.should(
       'have.text',
-      e2eUtils.globalThis.validation.confirmationOfDeviceGroupCreated,
+      e2eUtils.globalThis.validation.confirmationOfDeviceGroupCreated
     )
   })
 })

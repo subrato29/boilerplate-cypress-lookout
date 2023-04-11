@@ -25,7 +25,7 @@ describe('Validation of custom policy', () => {
     loginPage.submit.click()
     customPolicyPage.tabCustomPolicies.should(
       'have.text',
-      e2eUtils.globalThis.validation.tabCustomPolicies,
+      e2eUtils.globalThis.validation.tabCustomPolicies
     )
   })
 })
